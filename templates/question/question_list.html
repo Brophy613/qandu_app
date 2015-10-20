@@ -10,13 +10,13 @@
     {% csrf_token %}
     <input type="hidden" name="question" value="{{ question.id }}" />
     <input type="hidden" name="user" value="{{ user.id }}" />
-    {% if question in user_votes %}
-    <button class="btn btn-link">
-      <span class="glyphicon glyphicon-thumbs-down"></span>
-    </button>
-    {% else %}
-    <button class="btn btn-link">
-      <span class="glyphicon glyphicon-thumbs-up"></span>
+      {% if question in user_votes %}
+      <button class="btn btn-link">
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+      </button>
+      {% else %}
+      <button class="btn btn-link">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
     </button>
     {% endif %}
   </form>

@@ -134,7 +134,7 @@ class VoteFormView(FormView):
         Vote.objects.create(user=user, question=question)
       else:
         prev_votes[0].delete()
-    return redirect ('question list')
+    return redirect ('question_list')
 
 class UserDetailView(DetailView):
   model = User
