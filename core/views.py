@@ -126,7 +126,7 @@ class VoteFormView(FormView):
         Vote.objects.create(user=user, answer=answer)
       else:
         prev_votes[0].delete()
-      return redirect('question_list')
+      return redirect(reverse('question_detail', args=[form.data["question"]]))
     except:
       prev_votes = Vote.objects.filter(user=user, question=question)
       has_voted = (prev_votes.count()>0)
